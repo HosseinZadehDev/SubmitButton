@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: kalameh;
+}
+:root{
+    --blue: #00b0ff;
+    --dark-blue : #2962ff;
+    --green : #00c853;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #070707;
+}
+button{
+    padding: 10px 24px;
+    background: var(--blue);
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+    font-size: 50px;
+    overflow: hidden;
+}
+button:hover{
+    background: var(--dark-blue);
+}
+button .icon{
+    margin-right: 14px;
+    position: relative;
+    z-index: 10;
+}
+button.active .icon{
+    animation: animat 2s ease-in-out forwards;
+    z-index: 20;
+}
+button::before{
+    content: "Submited";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: 1.58s ease;
+    transition-delay: 0.7s;
+    border-radius: 8px;
+    z-index: 20;
+}
+button.active::before{
+    width: 100%;
+}
+@keyframes animat{
+    0%, 5%{
+        transform: rotate(0);
+        left: 0;
+    }
+    25%{
+        transform: rotate(45deg);
+        left: -24px;
+    }
+    100%{
+        transform: rotate(45deg);
+        left: calc(100% + 24px);
+    }
+}
+.footer{
+    width: 100%;
+    background: #121215;
+    position: fixed;
+    border-top: 4px solid #ffcb0a;
+    height: 56px;
+    bottom: 0px;
+  }
+  .footer h3{
+    font-size: 1.3em;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 8px;
+  }
